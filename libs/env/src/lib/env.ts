@@ -33,5 +33,3 @@ export const BYBIT_API_SECRET_TEST = string('BYBIT_API_SECRET_TEST');
 export const FRONTEND_URL = string('FRONTEND_URL');
 export const BACKEND_URL = string('BACKEND_URL');
 export const BACKEND_WS_URL = string('BACKEND_WS_URL');
-
-export const TELEGRAM_TOKEN = string('TELEGRAM_TOKEN');

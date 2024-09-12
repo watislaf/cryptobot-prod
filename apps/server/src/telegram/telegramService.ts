@@ -1,5 +1,3 @@
-import { TELEGRAM_TOKEN } from '@arbitrage/env';
-import { taskService } from 'libs/algo-api/src/lib/routes/tasks/tasksService';
 // import tg from 'node-telegram-bot-api';
 // import TelegramBot from 'node-telegram-bot-api';
 //
