@@ -64,3 +64,6 @@ npx nx run console:serve
 ```
 
 Консольное приложение запустит файл `apps/console/src/main.ts`, который инициирует алгоритм. После успешного запуска можно проверить ордера на Bybit и Hyperliquid TAO Perp Testnet. Для завершения работы приложения нажмите `ctrl+c`.
+
+
+More in future...
