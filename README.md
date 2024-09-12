@@ -1,71 +1,68 @@
-Oto przetłumaczony tekst na rosyjski:
+Извините за недоразумение. Вот обновленный вариант с восстановленными изображениями:
 
----
+# Руководство по крипто-боту
 
-# Crypto bot manual
+Для начала нужно заполнить файл `.env` необходимыми данными. Пример заполнения (некорректные данные) находится в файле `.env-example`.
 
-Сначала нужно заполнить файл `.env` данными. Пример данных (не валидных) находится в `.env-example`.
+Давайте двигаться постепенно. Сначала запустим алгоритм в тестовой сети, а потом в основной. (Учтите, что тестовая сеть менее стабильна по сравнению с основной — иногда она может разорвать соединение без видимых причин.)
 
-Начнем постепенно. Сначала запустим алгоритм на тестовой сети, а затем на основной сети. (Тестовая сеть нестабильна по сравнению с основной сетью, иногда она без причины разрывает соединение)
-
-# Wallet
-Здесь вставляем публичный адрес и приватный ключ нашего кошелька.
+## Кошелек
+Здесь необходимо указать публичный адрес и приватный ключ вашего кошелька:
 ```
 PRIVATE_KEY ='xxx'
 WALLET_ADDRESS = '0xXXX'
 ```
 Например, в MetaMask приватный [ключ можно найти здесь](https://support.metamask.io/managing-my-wallet/secret-recovery-phrase-and-private-keys/how-to-export-an-accounts-private-key/#:~:text=On%20the%20'Account%20details'%20page,to%20display%20your%20private%20key.)
 
-# Testnet
-Сначала устанавливаем USE_TEST_NET на true.
+## Тестовая сеть
+Для начала установите значение `USE_TEST_NET` на `true`:
 ```
 USE_TEST_NET = 'true'
 ```
 
-## HyperLiquid TESTNET
+### HyperLiquid TESTNET
 
-Затем пополняем счет на > 0.001 ETH в сети ARBITRUM.
+Пополните счет на сумму более 0.001 ETH в сети ARBITRUM.
 
-Запрашиваем баланс тестовыми токенами [здесь](https://www.alchemy.com/faucets/arbitrum-sepolia). Нужно войти через Alchemy и ввести адрес счета, на котором 0.001 ETH в основной сети ARBITRUM.
+Получите тестовые токены по [этой ссылке](https://www.alchemy.com/faucets/arbitrum-sepolia), войдя через Alchemy и введя адрес счета, на котором есть 0.001 ETH в основной сети ARBITRUM.
 
-Далее заходим на [hyperliquid testnet](https://app.hyperliquid-testnet.xyz/trade) и нажимаем `Enable Trading` справа, где обычно кнопка `Buy/Sell`. После подтверждения и перехода на HyperLiquid network не нажимаем `Deposit`, закрываем и идем (здесь)[https://app.hyperliquid-testnet.xyz/drip], чтобы получить mock USDC. Нажимаем второй сверху кнопкой "Claim 100 mock USDC".
+Затем перейдите на [HyperLiquid testnet](https://app.hyperliquid-testnet.xyz/trade) и нажмите `Enable Trading` (эта кнопка находится справа вместо `Buy/Sell`). После подтверждения и перехода на сеть HyperLiquid **не нажимайте** `Deposit`. Закройте окно и перейдите по [этой ссылке](https://app.hyperliquid-testnet.xyz/drip), чтобы получить mock USDC. Нажмите кнопку "Claim 100 mock USDC".
 
-Теперь проверим, удалось ли нам пополнить баланс mock токенами. Заходим на (главную страницу)[https://app.hyperliquid-testnet.xyz/trade/TAO]. Внизу нажимаем "Transfer to Perps" <img width="248" alt="Screenshot 2024-09-12 at 20 05 18" src="https://github.com/user-attachments/assets/66ad9ef1-f191-4a90-976e-ea9a9413bf44">. На (странице)[https://app.hyperliquid-testnet.xyz/trade/TAO] мы должны иметь возможность торговать. Мы можем выставить новый ордер и закрыть его без проблем.
+Проверьте баланс на главной странице [здесь](https://app.hyperliquid-testnet.xyz/trade/TAO). Внизу страницы нажмите "Transfer to Perps", чтобы убедиться, что токены получены. 
+<img width="248" alt="Screenshot 2024-09-12 at 20 05 18" src="https://github.com/user-attachments/assets/66ad9ef1-f191-4a90-976e-ea9a9413bf44">
+После этого вы сможете торговать на платформе и выставлять ордера без проблем.
 
-## Bybit TESTNET
-Регистрируемся на [Bybit testnet](https://testnet.bybit.com/app/terms-service/information).
+### Bybit TESTNET
+Зарегистрируйтесь на [Bybit testnet](https://testnet.bybit.com/app/terms-service/information).
 
-Нажимаем [request testnet tokens](https://www.bybit.com/en/help-center/article/How-to-Request-Test-Coins-on-Testnet), чтобы получить mock BTC.
+Запросите тестовые токены BTC по [этой ссылке](https://www.bybit.com/en/help-center/article/How-to-Request-Test-Coins-on-Testnet).
 
-Переносим BTC на Perps: <img width="248" alt="Screenshot 2024-09-12 at 20 35 19" src="https://github.com/user-attachments/assets/594c4c2d-a44a-4199-8970-788538f46038">
+Переведите BTC на Perps:
+<img width="248" alt="Screenshot 2024-09-12 at 20 35 19" src="https://github.com/user-attachments/assets/594c4c2d-a44a-4199-8970-788538f46038">
 
-Заходим на [bybit perp testnet](https://testnet.bybit.com/trade/usdt/TAOUSDT) и проходим верификацию. После этого пробуем торговать.
+После этого перейдите на [Bybit Perp Testnet](https://testnet.bybit.com/trade/usdt/TAOUSDT), пройдите верификацию и попробуйте начать торги.
 
-Нам нужно собрать Bybit API ключи [отсюда](https://testnet.bybit.com/app/user/api-management).
-
-И заполнить их здесь:
+Для продолжения необходимо получить API-ключи Bybit по [этой ссылке](https://testnet.bybit.com/app/user/api-management) и заполнить их в файле:
 ```
 BYBIT_API_KEY_TEST = ''
 BYBIT_API_SECRET_TEST = ''
 ```
 
-## Run algo in console
+## Запуск алгоритма в консоли
 Теперь попробуем запустить приложение в консоли.
 
-Сначала нужно установить подходящую версию `Node.js`. Для этого используем `nvm` ([macos](https://formulae.brew.sh/formula/nvm) | [ubuntu](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/) | [официальный github](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script).
+Для начала нужно установить подходящую версию `Node.js`. Рекомендуется использовать `nvm` для этого ([macOS](https://formulae.brew.sh/formula/nvm) | [Ubuntu](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/) | [GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script)).
 
-Затем устанавливаем Node.js package manager `npm` [официальная ссылка](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+Далее установите менеджер пакетов Node.js — `npm` [по этой инструкции](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-Теперь устанавливаем пакеты:
+Теперь установите необходимые зависимости:
 ```
 nvm use && npm i -g npx && npm i
 ```
 
-И запускаем консольное приложение:
+Запустите консольное приложение:
 ```
 npx nx run console:serve
 ```
 
-Консольное приложение запускает файл `apps/console/src/main.ts`, внутри которого запускается алгоритм. Если приложение запустилось, можно проверить, появились ли ордера на Bybit и Hyperliquid TAO perp Testnet. Чтобы завершить работу приложения, нужно нажать ctrl+c.
-
----
+Консольное приложение запустит файл `apps/console/src/main.ts`, который инициирует алгоритм. После успешного запуска можно проверить ордера на Bybit и Hyperliquid TAO Perp Testnet. Для завершения работы приложения нажмите `ctrl+c`.
