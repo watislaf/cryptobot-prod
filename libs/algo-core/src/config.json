@@ -1,0 +1,10 @@
+{
+  "hyperliquid_url": "wss://api.hyperliquid.xyz/ws",
+  "bybit_url": "wss://stream.bybit.com/realtime",
+  "api_key": "your_api_key",
+  "api_secret": "your_api_secret",
+  "rate_limits": {
+    "bybit": 60,
+    "hyperliquid": 120
+  }
+}

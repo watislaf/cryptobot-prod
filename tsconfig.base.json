@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@arbitrage/algo-api": ["libs/algo-api/src/index.ts"],
+      "@arbitrage/algo-core": ["libs/algo-core/src/index.ts"],
+      "@arbitrage/algo-types": ["libs/algo-types/src/index.ts"],
+      "@arbitrage/env": ["libs/env/src/index.ts"],
+      "@arbitrage/logger": ["libs/logger/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
