@@ -2,7 +2,7 @@
 
 This bot runs a strategy that is based on creation and maintenence of orders on both sides on unstable dex (hyperliquid) for a current market price +- 2%. When order on one side is filled it automatycally creates contr order on bybit (stable cex) . Perpetual orders are opened for seperate sides - thats how we use hadging. When orders will go back to normal positions are closed with profit 2%.
 
-Run in on your own risk : ) also hyperliquid has a cap for 16k$, after those it will increase api limit.  
+In current state bot can make money if proper pair and moment is found.  also hyperliquid has a cap for 16k$, after those it will increase api limit.  
 
 # Crypto Bot Guide
 
